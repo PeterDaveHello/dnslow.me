@@ -1,0 +1,5 @@
+nelo2-col.linecorp.com          # LINE APP message sending, blocked by AdGuard
+mailgun.org                     # Email links
+track.fstry.me                  # Firstory tracking, blocking will cause podcast broken issue
+topcashbackdigitalsolutions.com # topcashback
+ipdata.co                       # IP geolocation api
