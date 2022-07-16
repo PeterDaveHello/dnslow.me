@@ -1,0 +1,424 @@
+bind_host: 0.0.0.0
+bind_port: 3000
+beta_bind_port: 0
+users:
+- name: admin
+  password: $2a$10$0541.OISg2O67M9BNAWOFe0IRzaJdN9newEyplHYTishWT8PcyuXG
+auth_attempts: 5
+block_auth_min: 15
+http_proxy: ""
+language: en
+debug_pprof: false
+web_session_ttl: 720
+dns:
+  bind_hosts:
+  - 0.0.0.0
+  port: 53
+  statistics_interval: 90
+  querylog_enabled: true
+  querylog_file_enabled: true
+  querylog_interval: 24h
+  querylog_size_memory: 1000
+  anonymize_client_ip: false
+  protection_enabled: true
+  blocking_mode: null_ip
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_response_ttl: 10
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  ratelimit: 1996
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+  - dnslow.me-blocky
+  upstream_dns_file: ""
+  bootstrap_dns:
+  - 9.9.9.9
+  - 101.101.101.101
+  all_servers: false
+  fastest_addr: false
+  fastest_timeout: 1s
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts:
+  - version.bind
+  - id.server
+  - hostname.bind
+  trusted_proxies:
+  - 172.16.0.0/12
+  - 127.0.0.0/8
+  - ::1/128
+  cache_size: 4194304
+  cache_ttl_min: 10
+  cache_ttl_max: 864000
+  cache_optimistic: true
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: true
+  edns_client_subnet: false
+  max_goroutines: 300
+  ipset: []
+  filtering_enabled: true
+  filters_update_interval: 12
+  parental_enabled: false
+  safesearch_enabled: false
+  safebrowsing_enabled: true
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  rewrites: []
+  blocked_services: []
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams: []
+tls:
+  enabled: true
+  server_name: dnslow.me
+  force_https: false
+  port_https: 444
+  port_dns_over_tls: 853
+  port_dns_over_quic: 853
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: true
+  strict_sni_check: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: /opt/adguardhome/conf/server.crt
+  private_key_path: /opt/adguardhome/conf/server.key
+filters:
+- enabled: true
+  url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+  name: AdGuard DNS filter
+  id: 1
+- enabled: true
+  url: https://adaway.org/hosts.txt
+  name: AdAway Default Blocklist
+  id: 2
+- enabled: false
+  url: https://anti-ad.net/easylist.txt
+  name: 'CHN: anti-AD'
+  id: 1657974817
+- enabled: true
+  url: https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
+  name: WindowsSpyBlocker - Hosts spy rules
+  id: 1657974818
+- enabled: true
+  url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
+  name: NoCoin Filter List
+  id: 1657974819
+- enabled: true
+  url: https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt
+  name: Scam Blocklist by DurableNapkin
+  id: 1657974820
+- enabled: true
+  url: https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts
+  name: add.Dead
+  id: 1657974821
+- enabled: true
+  url: https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts
+  name: add.Risk
+  id: 1657974822
+- enabled: true
+  url: https://github.com/DandelionSprout/adfilt/raw/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
+  name: Anti Malware List
+  id: 1657974823
+- enabled: true
+  url: https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
+  name: Anti-Malware Blocklists
+  id: 1657974824
+- enabled: true
+  url: https://azorult-tracker.net/api/list/domain?format=plain
+  name: AZORult Tracker
+  id: 1657974825
+- enabled: true
+  url: https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/hosts
+  name: Badd-Boyz-Hosts
+  id: 1657974826
+- enabled: true
+  url: https://raw.githubusercontent.com/stamparm/blackbook/master/blackbook.txt
+  name: blackbook
+  id: 1657974827
+- enabled: true
+  url: https://gitlab.com/ZeroDot1/CoinBlockerLists/-/raw/master/hosts
+  name: CoinBlockerLists
+  id: 1657974828
+- enabled: true
+  url: https://kriskintel.com/feeds/ktip_covid_domains.txt
+  name: COVID-19 phishing sites
+  id: 1657974829
+- enabled: true
+  url: https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/master/src/hosts.txt
+  name: eth-phishing-detect
+  id: 1657974830
+- enabled: true
+  url: https://blocklistproject.github.io/Lists/alt-version/fraud-nl.txt
+  name: Fraud block list
+  id: 1657974831
+- enabled: true
+  url: https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt
+  name: KADhosts(KAD host version)
+  id: 1657974832
+- enabled: true
+  url: https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware
+  name: Malware
+  id: 1657974833
+- enabled: true
+  url: https://hole.cert.pl/domains/domains.txt
+  name: Malicious Domain list
+  id: 1657974834
+- enabled: true
+  url: https://kriskintel.com/feeds/ktip_malicious_domains.txt
+  name: Malicious Domain list
+  id: 1657974835
+- enabled: true
+  url: https://rescure.me/rescure_domain_blacklist.txt
+  name: Malicious Domain Blacklist
+  id: 1657974836
+- enabled: true
+  url: https://raw.githubusercontent.com/HexxiumCreations/threat-list/gh-pages/hosts.txt
+  name: Malicious Domain Blocking
+  id: 1657974837
+- enabled: true
+  url: https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt
+  name: Maltrail
+  id: 1657979058
+- enabled: true
+  url: https://openphish.com/feed.txt
+  name: OpenPhish
+  id: 1657979059
+- enabled: true
+  url: https://phishing.army/download/phishing_army_blocklist_extended.txt
+  name: Phishing Army Extended
+  id: 1657979060
+- enabled: true
+  url: https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt
+  name: Phishing block list
+  id: 1657979061
+- enabled: true
+  url: https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt
+  name: Phishing Domain Database
+  id: 1657979062
+- enabled: true
+  url: https://securereload.tech/Phishing/Lists/Latest/
+  name: Phishing List
+  id: 1657979063
+- enabled: true
+  url: https://malware-filter.gitlab.io/malware-filter/phishing-filter-hosts.txt
+  name: Phishing URL Blocklist
+  id: 1657979064
+- enabled: true
+  url: https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Phishing-Angriffe
+  name: Phishing Attack
+  id: 1657979065
+- enabled: true
+  url: https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt
+  name: Ransomware block list
+  id: 1657979066
+- enabled: true
+  url: https://kriskintel.com/feeds/ktip_ransomware_feeds.txt
+  name: Ransomware Feeds
+  id: 1657979067
+- enabled: true
+  url: https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt
+  name: Scam block list
+  id: 1657979068
+- enabled: true
+  url: https://threatcrowd.org/feeds/domains.txt
+  name: Threat Crowd Domain Feed
+  id: 1657979069
+- enabled: true
+  url: https://threatfox.abuse.ch/downloads/hostfile
+  name: ThreatFox IOCs host file
+  id: 1657979070
+- enabled: true
+  url: https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
+  name: Threat-Intel
+  id: 1657979071
+- enabled: true
+  url: https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
+  name: Toxic Domains
+  id: 1657979072
+- enabled: true
+  url: https://urlhaus.abuse.ch/downloads/hostfile/
+  name: URLhaus
+  id: 1657979073
+- enabled: true
+  url: https://ipinfo.tw/dns/UT1.domains
+  name: UT1 malware/phishing Category
+  id: 1657979075
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/apple
+  name: NextDNS Apple
+  id: 1657979076
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/huawei
+  name: NextDNS Huawei
+  id: 1657979077
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/samsung
+  name: NextDNS Samsung
+  id: 1657979078
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/windows
+  name: NextDNS Windows
+  id: 1657979079
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/xiaomi
+  name: NextDNS Xiaomi
+  id: 1657979080
+- enabled: true
+  url: https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/domains.txt
+  name: 1Hosts
+  id: 1657979081
+- enabled: true
+  url: https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
+  name: notrack-blocklists
+  id: 1657979082
+- enabled: true
+  url: https://v.firebog.net/hosts/Easylist.txt
+  name: Easylist
+  id: 1657979084
+- enabled: true
+  url: https://v.firebog.net/hosts/Easyprivacy.txt
+  name: Easyprivacy
+  id: 1657979085
+- enabled: true
+  url: https://v.firebog.net/hosts/Prigent-Malware.txt
+  name: Prigent-Malware
+  id: 1657979086
+- enabled: true
+  url: https://v.firebog.net/hosts/Prigent-Phishing.txt
+  name: Prigent-Phishing
+  id: 1657979087
+- enabled: true
+  url: https://www.joewein.net/dl/bl/dom-bl-base.txt
+  name: joewein.net dom-bl-base
+  id: 1657979088
+- enabled: true
+  url: https://block.energized.pro/extensions/regional/formats/domains.txt
+  name: energized regional
+  id: 1657979089
+- enabled: true
+  url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  name: StevenBlack
+  id: 1657979090
+- enabled: true
+  url: https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts
+  name: StevenBlack KADhosts
+  id: 1657979091
+- enabled: true
+  url: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easyprivacy.txt
+  name: 0Zinc/easylists-for-pihole easyprivacy
+  id: 1657979092
+- enabled: true
+  url: https://raw.githubusercontent.com/0Zinc/easylists-for-pihole/master/easylist-china.txt
+  name: 0Zinc/easylists-for-pihole easylist-china
+  id: 1657979093
+- enabled: true
+  url: https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/gh-pages/domains.txt
+  name: Ewpratten/youtube_ad_blocklist
+  id: 1657979094
+- enabled: true
+  url: https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/combined_disguised_trackers_justdomains.txt
+  name: AdguardTeam/cname-trackers
+  id: 1657979095
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/cname-cloaking-blocklist/master/domains
+  name: nextdns/cname-cloaking-blocklist
+  id: 1657979096
+- enabled: true
+  url: https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/EasyPrivacyCNAME.txt
+  name: r-a-y/mobile-hosts EasyPrivacyCNAME
+  id: 1657979097
+- enabled: true
+  url: https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardTracking.txt
+  name: r-a-y/mobile-hosts AdguardTracking
+  id: 1657979098
+- enabled: true
+  url: https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileSpyware.txt
+  name: r-a-y/mobile-hosts AdguardMobileSpyware
+  id: 1657979099
+- enabled: true
+  url: https://raw.githubusercontent.com/r-a-y/mobile-hosts/master/AdguardMobileAds.txt
+  name: r-a-y/mobile-hosts AdguardMobileAds
+  id: 1657979100
+whitelist_filters:
+- enabled: true
+  url: https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/list
+  name: url-shorteners
+  id: 1657979101
+- enabled: true
+  url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/affiliate-tracking-domains
+  name: affiliate-tracking-domains
+  id: 1657979102
+- enabled: true
+  url: https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
+  name: anudeepND
+  id: 1657979103
+- enabled: true
+  url: https://raw.githubusercontent.com/RPiList/specials/master/dev/whitelist
+  name: RPiList
+  id: 1657979104
+- enabled: true
+  url: https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/whitelist/master/domains.list
+  name: Ultimate-Hosts-Blacklist
+  id: 1657979105
+- enabled: true
+  url: https://raw.githubusercontent.com/EnergizedProtection/unblock/master/basic/formats/domains.txt
+  name: EnergizedProtection
+  id: 1657979106
+- enabled: true
+  url: https://raw.githubusercontent.com/badmojr/1Hosts/master/submit_here/exclude_for_all.txt
+  name: 1Hosts exclude_for_all
+  id: 1657979107
+- enabled: true
+  url: https://raw.githubusercontent.com/badmojr/1Hosts/master/submit_here/exclude_for_mini_Lite_only.txt
+  name: 1Hosts exclude_for_mini_Lite_only
+  id: 1657979108
+- enabled: true
+  url: https://raw.githubusercontent.com/PeterDaveHello/dnslow.me/master/whitelist
+  name: Custom whitelist
+  id: 1660240101
+user_rules:
+- '@@||nelo2-col.linecorp.com^'
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent: []
+log_compress: false
+log_localtime: false
+log_max_backups: 0
+log_max_size: 100
+log_max_age: 3
+log_file: ""
+verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 14
