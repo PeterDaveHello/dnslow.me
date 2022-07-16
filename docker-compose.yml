@@ -1,0 +1,25 @@
+---
+
+version: "2.1"
+services:
+  adguardhome:
+    image: adguard/adguardhome:v0.107.8
+    container_name: dnslow.me-adguardhome
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000/tcp"
+      - "853:853/tcp"
+      - "853:853/udp"
+    volumes:
+      - ./adguardhome/work:/opt/adguardhome/work
+      - ./adguardhome/conf:/opt/adguardhome/conf
+  blocky:
+    image: spx01/blocky:v0.19
+    container_name: dnslow.me-blocky
+    restart: unless-stopped
+    #ports:
+      #- "8053:8053/tcp"
+      #- "8053:8053/udp"
+    volumes:
+      - ./blocky-dns-proxy-config.yml:/app/config.yml
+
