@@ -1,0 +1,99 @@
+upstream:
+  default:
+    - tcp-tls:8.8.8.8
+    - https://8.8.8.8/dns-query
+    - tcp-tls:9.9.9.9
+    - https://9.9.9.9/dns-query
+    - tcp-tls:101.102.103.104
+    - https://101.102.103.104/dns-query
+    - tcp-tls:101.101.101.101
+    - https://101.101.101.101/dns-query
+    - https://1.0.0.2/dns-query
+    - https://1.1.1.2/dns-query
+    - tcp-tls:security.cloudflare-dns.com
+    - tcp-tls:dns.nextdns.io
+    - https://dns.nextdns.io
+    - tcp-tls:anycast.dns.nextdns.io
+    - https://anycast.dns.nextdns.io
+    - tcp-tls:p1.freedns.controld.com
+    - https://freedns.controld.com/p1
+    - tcp-tls:protected.canadianshield.cira.ca
+    - https://protected.canadianshield.cira.ca/dns-query
+    - tcp-tls:max.rethinkdns.com
+    - https://max.rethinkdns.com
+    - tcp-tls:uncensored.dns.dnswarden.com
+    - https://dns.dnswarden.com/uncensored
+    - tcp-tls:dns-unfiltered.adguard.com
+    - https://dns-unfiltered.adguard.com/dns-query
+    - tcp-tls:doh.mullvad.net
+    - https://doh.mullvad.net/dns-query
+    - tcp-tls:dns.switch.ch
+    - https://dns.switch.ch/dns-query
+    - tcp-tls:security-filter-dns.cleanbrowsing.org
+    - https://doh.cleanbrowsing.org/doh/security-filter/
+    - tcp-tls:dot1.applied-privacy.net
+    - https://doh.applied-privacy.net/query
+    - tcp-tls:dns.digitale-gesellschaft.ch
+    - https://dns.digitale-gesellschaft.ch/dns-query
+    - tcp-tls:unicast.uncensoreddns.org
+    - https://unicast.uncensoreddns.org/dns-query
+    - tcp-tls:anycast.uncensoreddns.org
+    - https://anycast.uncensoreddns.org/dns-query
+    - tcp-tls:dot.libredns.gr
+    - https://doh.libredns.gr/dns-query
+    - tcp-tls:dot.seby.io
+    - https://doh.seby.io:8443/dns-query
+    - https://doh-2.seby.io/dns-query
+    - tcp-tls:doh.dnslify.com
+    - https://doh.dnslify.com/dns-query
+    - tcp-tls:getdnsapi.net
+    - https://doh.opendns.com/dns-query
+    - https://dns.hinet.net/dns-query
+    - https://ordns.he.net/dns-query
+    - tcp-tls:eu1.dns.lavate.ch
+    - https://eu1.dns.lavate.ch/dns-query
+    - tcp-tls:eu2.dns.lavate.ch
+    - https://eu2.dns.lavate.ch/dns-query
+    - tcp-tls:dns.hostux.net
+    - https://dns.hostux.net/dns-query
+    - tcp-tls:puredns.org
+    - https://puredns.org/dns-query
+    - tcp-tls:dns.wevpn.com
+    - https://dns.wevpn.com/dns-query
+    - tcp-tls:www.morbitzer.de
+    - https://www.morbitzer.de/dns-query
+    - tcp-tls:ns1.opennameserver.org
+    - https://ns1.opennameserver.org/dns-query
+    - https://opennic1.eth-services.de:853/
+    - https://opennic2.eth-services.de:853/
+    - https://pluton.plan9-dns.com/dns-query
+    - https://helios.plan9-dns.com/dns-query
+    - https://kronos.plan9-dns.com/dns-query
+    - https://sby-doh.limotelu.org/dns-query
+    - https://chewbacca.meganerd.nl/dns-query
+    - https://secure.avastdns.com/dns-query
+
+caching:
+  minTime: 10s
+  prefetching: true
+  prefetchExpires: 3h
+  prefetchThreshold: 100
+  prefetchMaxItemsCount: 5000
+
+queryLog:
+  logRetentionDays: 7
+  creationCooldown: 2s
+
+redis:
+  address: 172.17.0.1:6379
+
+port: 53
+bootstrapDns:
+  upstream: https://dns.quad9.net/dns-query
+  ips:
+    - 9.9.9.9
+
+disableIPv6: false
+logLevel: warn
+logFormat: text
+logPrivacy: true
