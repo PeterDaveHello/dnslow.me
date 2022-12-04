@@ -1,24 +1,38 @@
 upstream:
   default:
+    - tcp-tls:8.8.4.4
+    - https://8.8.4.4/dns-query
     - tcp-tls:8.8.8.8
     - https://8.8.8.8/dns-query
-    - tcp-tls:9.9.9.9
-    - https://9.9.9.9/dns-query
+    - tcp-tls:dns.google
+    - https://dns.google/dns-query
+    - tcp-tls:9.9.9.10
+    - https://9.9.9.10/dns-query
+    - https://dns10.quad9.net/dns-query
     - tcp-tls:101.102.103.104
     - https://101.102.103.104/dns-query
     - tcp-tls:101.101.101.101
     - https://101.101.101.101/dns-query
-    - https://1.0.0.2/dns-query
-    - https://1.1.1.2/dns-query
-    - tcp-tls:security.cloudflare-dns.com
+    - https://dns.twnic.tw/dns-query
+    - tcp-tls:1.1.1.1
+    - https://1.1.1.1/dns-query
+    - tcp-tls:1.0.0.1
+    - https://1.0.0.1/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://mozilla.cloudflare-dns.com/dns-query
     - tcp-tls:dns.nextdns.io
     - https://dns.nextdns.io
     - tcp-tls:anycast.dns.nextdns.io
     - https://anycast.dns.nextdns.io
-    - tcp-tls:p1.freedns.controld.com
-    - https://freedns.controld.com/p1
-    - tcp-tls:protected.canadianshield.cira.ca
-    - https://protected.canadianshield.cira.ca/dns-query
+    - https://firefox.dns.nextdns.io
+    - https://doh.xfinity.com/dns-query
+    - https://dns.shaw.ca/dns-query
+    - tcp-tls:p0.freedns.controld.com
+    - https://freedns.controld.com/p0
+    - tcp-tls:uncensored.freedns.controld.com
+    - https://freedns.controld.com/uncensored
+    - tcp-tls:private.canadianshield.cira.ca
+    - https://private.canadianshield.cira.ca/dns-query
     - tcp-tls:max.rethinkdns.com
     - https://max.rethinkdns.com
     - tcp-tls:uncensored.dns.dnswarden.com
@@ -27,14 +41,20 @@ upstream:
     - https://dns-unfiltered.adguard.com/dns-query
     - tcp-tls:doh.mullvad.net
     - https://doh.mullvad.net/dns-query
+    - tcp-tls:dns.surfshark.com
+    - https://dns.surfshark.com/dns-query
     - tcp-tls:dns.switch.ch
     - https://dns.switch.ch/dns-query
+    - tcp-tls:dns.dnshome.de
+    - https://dns.dnshome.de/dns-query
     - tcp-tls:security-filter-dns.cleanbrowsing.org
     - https://doh.cleanbrowsing.org/doh/security-filter/
     - tcp-tls:dot1.applied-privacy.net
     - https://doh.applied-privacy.net/query
     - tcp-tls:dns.digitale-gesellschaft.ch
     - https://dns.digitale-gesellschaft.ch/dns-query
+    - tcp-tls:dns.digitalsize.net
+    - https://dns.digitalsize.net/dns-query
     - tcp-tls:unicast.uncensoreddns.org
     - https://unicast.uncensoreddns.org/dns-query
     - tcp-tls:anycast.uncensoreddns.org
@@ -47,7 +67,6 @@ upstream:
     - tcp-tls:doh.dnslify.com
     - https://doh.dnslify.com/dns-query
     - tcp-tls:getdnsapi.net
-    - https://doh.opendns.com/dns-query
     - https://dns.hinet.net/dns-query
     - https://ordns.he.net/dns-query
     - tcp-tls:eu1.dns.lavate.ch
@@ -64,6 +83,12 @@ upstream:
     - https://www.morbitzer.de/dns-query
     - tcp-tls:ns1.opennameserver.org
     - https://ns1.opennameserver.org/dns-query
+    - tcp-tls:ns2.opennameserver.org
+    - https://ns2.opennameserver.org/dns-query
+    - tcp-tls:ns3.opennameserver.org
+    - https://ns3.opennameserver.org/dns-query
+    - tcp-tls:ns4.opennameserver.org
+    - https://ns4.opennameserver.org/dns-query
     - https://opennic1.eth-services.de:853/
     - https://opennic2.eth-services.de:853/
     - https://pluton.plan9-dns.com/dns-query
@@ -72,6 +97,11 @@ upstream:
     - https://sby-doh.limotelu.org/dns-query
     - https://chewbacca.meganerd.nl/dns-query
     - https://secure.avastdns.com/dns-query
+    - https://dnsnl.alekberg.net/dns-query
+    - https://dnsse.alekberg.net/dns-query
+    - https://ns1.flodns.net/dns-query
+    - https://ns2.flodns.net/dns-query
+    - https://doh.crypto.sx/dns-query
 
 caching:
   minTime: 10s
