@@ -1,1 +1,0 @@
-/home/peterhsu/nrd-list-downloader/paid-nrd7days.txt

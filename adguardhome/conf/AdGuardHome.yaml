@@ -343,11 +343,11 @@ filters:
     name: r-a-y/mobile-hosts AdguardMobileAds
     id: 1657979100
   - enabled: true
-    url: https://dnslow.me/nrd7days.txt
+    url: https://dnslow.me/nrd-7days-free.txt
     name: nrd
     id: 1663857609
   - enabled: true
-    url: https://dnslow.me/paid-nrd7days.txt
+    url: https://dnslow.me/nrd-7days-paid.txt
     name: paid-nrd
     id: 1665499066
 whitelist_filters:
