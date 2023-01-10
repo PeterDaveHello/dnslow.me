@@ -2,7 +2,7 @@
 
 Your advertisement and threat blocking, privacy-first, encrypted DNS.
 
-All DNS requests will be protected with [threat-intelligence feeds](https://github.com/PeterDaveHello/threat-hostlist), Newly Registered Domain feeds, AD-blocking feeds, and then randomly distributed to some other DNS resolvers for enhanced privacy.
+All DNS requests will be protected with [threat-intelligence feeds](https://github.com/PeterDaveHello/threat-hostlist), [Newly Registered Domain](https://github.com/PeterDaveHello/nrd-list-downloader) feeds(paid feed included), AD-blocking feeds, and then randomly distributed to some other DNS resolvers for enhanced privacy.
 
 Only DoH(DNS over HTTPS), DoT(DNS over TLS), and DoQ(DNS over Quic) protocol are provided, plain-text DNS is not supported here.
 
