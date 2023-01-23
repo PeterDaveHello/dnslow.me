@@ -247,23 +247,23 @@ filters:
     name: UT1 malware/phishing Category
     id: 1657979075
   - enabled: true
-    url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/apple
+    url: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/apple
     name: NextDNS Apple
     id: 1657979076
   - enabled: true
-    url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/huawei
+    url: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/huawei
     name: NextDNS Huawei
     id: 1657979077
   - enabled: true
-    url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/samsung
+    url: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/samsung
     name: NextDNS Samsung
     id: 1657979078
   - enabled: true
-    url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/windows
+    url: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/windows
     name: NextDNS Windows
     id: 1657979079
   - enabled: true
-    url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/native/xiaomi
+    url: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/xiaomi
     name: NextDNS Xiaomi
     id: 1657979080
   - enabled: true
