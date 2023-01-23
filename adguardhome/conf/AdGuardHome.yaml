@@ -356,7 +356,7 @@ whitelist_filters:
     name: url-shorteners
     id: 1657979101
   - enabled: true
-    url: https://raw.githubusercontent.com/nextdns/metadata/master/privacy/affiliate-tracking-domains
+    url: https://raw.githubusercontent.com/nextdns/click-tracking-domains/main/domains
     name: affiliate-tracking-domains
     id: 1657979102
   - enabled: true
