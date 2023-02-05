@@ -123,7 +123,7 @@ filters:
     name: add.Risk
     id: 1657974822
   - enabled: true
-    url: https://github.com/DandelionSprout/adfilt/raw/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
+    url: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
     name: Anti Malware List
     id: 1657974823
   - enabled: true
