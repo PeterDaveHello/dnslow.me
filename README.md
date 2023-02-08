@@ -18,6 +18,11 @@ DNS Stamps(For AdGuard Home, DNSCrypt, and other compatiple applications):
 - DoT: `sdns://AwEAAAAAAAAAAAAJZG5zbG93Lm1l`
 - DoQ: `sdns://BAEAAAAAAAAAAAAJZG5zbG93Lm1l`
 
+ Apple Configuration for iOS v14+ and macOS v11+ (Big Sur and later)
+
+- [DoH profile](https://dnslow.me/doh.dnslow.mobileconfig)
+- [DoT profile](https://dnslow.me/dot.dnslow.mobileconfig)
+
 Privacy policy: Logging is only enabled to debug, and improve the service itself, minimize the false-positive blocking. All logs will only be existing for a very short time. No logs will be shared, sold, or exchanged with any 3rd-party.
 
 Thank you for using dnslow.me.
