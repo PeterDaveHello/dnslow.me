@@ -125,7 +125,7 @@ bootstrapDns:
   ips:
     - 9.9.9.9
 
-disableIPv6: false
+connectIPVersion: v4
 logLevel: warn
 logFormat: text
 logPrivacy: true
