@@ -122,6 +122,7 @@ bootstrapDns:
   upstream: https://dns.quad9.net/dns-query
   ips:
     - 9.9.9.9
+    - 149.112.112.112
 
 connectIPVersion: v4
 logLevel: warn
