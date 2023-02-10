@@ -102,7 +102,6 @@ upstream:
     - https://dnsse.alekberg.net/dns-query
     - https://ns1.flodns.net/dns-query
     - https://ns2.flodns.net/dns-query
-    - https://doh.crypto.sx/dns-query
 
 caching:
   minTime: 10s
