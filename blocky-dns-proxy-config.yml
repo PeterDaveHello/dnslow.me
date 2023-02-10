@@ -28,7 +28,6 @@ upstream:
     - tcp-tls:dns0.eu
     - https://dns0.eu/dns-query
     - https://doh.xfinity.com/dns-query
-    - https://dns.shaw.ca/dns-query
     - tcp-tls:p0.freedns.controld.com
     - https://freedns.controld.com/p0
     - tcp-tls:uncensored.freedns.controld.com
