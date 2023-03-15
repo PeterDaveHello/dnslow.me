@@ -62,8 +62,6 @@ upstream:
     - tcp-tls:dot.seby.io
     - https://doh.seby.io:8443/dns-query
     - https://doh-2.seby.io/dns-query
-    - tcp-tls:doh.dnslify.com
-    - https://doh.dnslify.com/dns-query
     - tcp-tls:getdnsapi.net
     - https://dns.hinet.net/dns-query
     - https://ordns.he.net/dns-query
