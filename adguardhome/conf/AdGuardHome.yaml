@@ -163,10 +163,6 @@ filters:
     name: KADhosts(KAD host version)
     id: 1657974832
   - enabled: true
-    url: https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware
-    name: Malware
-    id: 1657974833
-  - enabled: true
     url: https://hole.cert.pl/domains/domains.txt
     name: Malicious Domain list
     id: 1657974834
@@ -210,10 +206,6 @@ filters:
     url: https://malware-filter.gitlab.io/malware-filter/phishing-filter-hosts.txt
     name: Phishing URL Blocklist
     id: 1657979064
-  - enabled: true
-    url: https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Phishing-Angriffe
-    name: Phishing Attack
-    id: 1657979065
   - enabled: true
     url: https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt
     name: Ransomware block list
