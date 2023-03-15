@@ -23,6 +23,8 @@ upstream:
     - tcp-tls:anycast.dns.nextdns.io
     - https://anycast.dns.nextdns.io
     - https://firefox.dns.nextdns.io
+    - tcp-tls:open.dns0.eu
+    - https://open.dns0.eu/dns-query
     - tcp-tls:dns0.eu
     - https://dns0.eu/dns-query
     - tcp-tls:p0.freedns.controld.com
