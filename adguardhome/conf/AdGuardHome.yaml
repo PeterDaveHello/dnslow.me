@@ -350,6 +350,14 @@ filters:
     url: https://dnslow.me/nrd-7days-paid.txt
     name: paid-nrd
     id: 1665499066
+  - enabled: true
+    url: https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/hosts.txt
+    name: Scam Blocklist
+    id: 1676133122
+  - enabled: true
+    url: https://raw.githubusercontent.com/elliotwutingfeng/GlobalAntiScamOrg-blocklist/main/global-anti-scam-org-scam-urls-pihole.txt
+    name: GlobalAntiScamOrg-blocklist
+    id: 1676133123
 whitelist_filters:
   - enabled: true
     url: https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/list
