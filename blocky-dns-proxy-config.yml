@@ -71,8 +71,6 @@ upstream:
     - https://dns.hostux.net/dns-query
     - tcp-tls:puredns.org
     - https://puredns.org/dns-query
-    - tcp-tls:dns.wevpn.com
-    - https://dns.wevpn.com/dns-query
     - tcp-tls:www.morbitzer.de
     - https://www.morbitzer.de/dns-query
     - tcp-tls:ns1.opennameserver.org
