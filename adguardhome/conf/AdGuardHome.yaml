@@ -360,6 +360,14 @@ filters:
     url: https://raw.githubusercontent.com/elliotwutingfeng/GlobalAntiScamOrg-blocklist/main/global-anti-scam-org-scam-urls-pihole.txt
     name: GlobalAntiScamOrg-blocklist
     id: 1676133123
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
+    name: 'CHN: AdRules DNS List'
+    id: 1676133124
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt
+    name: Phishing URL Blocklist (PhishTank and OpenPhish)
+    id: 1676133125
 whitelist_filters:
   - enabled: true
     url: https://raw.githubusercontent.com/PeterDaveHello/url-shorteners/master/list
