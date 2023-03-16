@@ -1,6 +1,5 @@
 bind_host: 0.0.0.0
 bind_port: 3000
-beta_bind_port: 0
 users:
   - name: admin
     password: $2a$10$0541.OISg2O67M9BNAWOFe0IRzaJdN9newEyplHYTishWT8PcyuXG
@@ -8,17 +7,13 @@ auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
 language: en
+theme: auto
 debug_pprof: false
 web_session_ttl: 720
 dns:
   bind_hosts:
     - 0.0.0.0
   port: 53
-  statistics_interval: 90
-  querylog_enabled: true
-  querylog_file_enabled: true
-  querylog_interval: 6h
-  querylog_size_memory: 1000
   anonymize_client_ip: true
   protection_enabled: true
   blocking_mode: null_ip
@@ -56,7 +51,10 @@ dns:
   bogus_nxdomain: []
   aaaa_disabled: false
   enable_dnssec: true
-  edns_client_subnet: false
+  edns_client_subnet:
+    custom_ip: ""
+    enabled: false
+    use_custom: false
   max_goroutines: 300
   handle_ddr: true
   ipset: []
@@ -76,6 +74,8 @@ dns:
   private_networks: []
   use_private_ptr_resolvers: true
   local_ptr_upstreams: []
+  use_dns64: false
+  dns64_prefixes: []
   serve_http3: false
   use_http3_upstreams: false
 tls:
@@ -88,11 +88,21 @@ tls:
   port_dnscrypt: 0
   dnscrypt_config_file: ""
   allow_unencrypted_doh: true
-  strict_sni_check: false
   certificate_chain: ""
   private_key: ""
   certificate_path: /opt/adguardhome/conf/server.crt
   private_key_path: /opt/adguardhome/conf/server.key
+  strict_sni_check: false
+querylog:
+  enabled: true
+  file_enabled: true
+  interval: 6h
+  size_memory: 1000
+  ignored: []
+statistics:
+  enabled: true
+  interval: 90
+  ignored: []
 filters:
   - enabled: true
     url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
@@ -428,4 +438,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 14
+schema_version: 17
