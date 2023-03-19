@@ -7,44 +7,91 @@
 
 <h1>Welcome to dnslow.me!</h1>
 
-<h2>Your advertisement and threat blocking, privacy-first, encrypted DNS.</h2>
+<h2>Your privacy-first, encrypted DNS service that blocks advertisements and threats.</h2>
 
-<h3>All DNS requests will be protected(filtered) with <a href="https://github.com/PeterDaveHello/threat-hostlist">threat-intelligence feeds</a>, <a href="https://github.com/PeterDaveHello/nrd-list-downloader">Newly Registered Domain</a> feeds(paid feed included), AD-blocking feeds, and then randomly distributed to some other DNS resolvers for enhanced privacy.</h3>
+<p>dnslow.me offers a secure, encrypted DNS service with integrated ad-blocking and protection against a wide range of online threats, including malicious domains, phishing sites, malware, ransomware, botnets, and high-risk newly registered domains (NRDs). Designed with a focus on user privacy and security.</p>
 
-<h4>dnslow.me is an free and open source project, plesae feel free to contribute on our <a href="https://github.com/PeterDaveHello/dnslow.me">GitHub repository</a></h4>
+<p>All DNS requests are protected using <a href="https://github.com/PeterDaveHello/threat-hostlist">threat-intelligence feeds</a>, <a href="https://github.com/PeterDaveHello/nrd-list-downloader">Newly Registered Domain</a> feeds (including paid feeds), and ad-blocking feeds. The requests are then randomly distributed to other DNS resolvers to further enhance privacy.</p>
 
-<p>Only <strong>DoH</strong>(DNS over HTTPS), <strong>DoT</strong>(DNS over TLS), and <strong>DoQ</strong>(DNS over Quic) protocol are provided, plain-text DNS is <i>not</i> supported here.</p>
+<p>We are committed to user privacy and security, exclusively supporting encrypted DNS protocols, including DoH (DNS over HTTPS), DoT (DNS over TLS), and DoQ (DNS over QUIC). Plain-text DNS is not supported.</p>
 
-<p>
-Encrypted DNS Endpoints:
+<h3>Encrypted DNS Endpoints:</h3>
 <ul>
-<li>DoH: <code>https://dnslow.me/dns-query</code> (port 443).</li>
-<li>DoT: <code>dnslow.me</code> (port 853)</li>
-<li>DoQ: <code>dnslow.me</code> (port 853)</li>
+  <li>DoH: <code>https://dnslow.me/dns-query</code> (port 443).</li>
+  <li>DoT: <code>dnslow.me</code> (port 853)</li>
+  <li>DoQ: <code>dnslow.me</code> (port 853)</li>
 </ul>
-</p>
 
-<p>
-DNS Stamps(For AdGuard Home, DNSCrypt, and other compatiple applications):
+<h3>DNS Stamps (for AdGuard Home, DNSCrypt, and other compatible applications):</h3>
 <ul>
-<li>DoH: <code>sdns://AgEAAAAAAAAAAAAJZG5zbG93Lm1lCi9kbnMtcXVlcnk</code></li>
-<li>DoT: <code>sdns://AwEAAAAAAAAAAAAJZG5zbG93Lm1l</code></li>
-<li>DoQ: <code>sdns://BAEAAAAAAAAAAAAJZG5zbG93Lm1l</code></li>
+  <li>DoH: <code>sdns://AgEAAAAAAAAAAAAJZG5zbG93Lm1lCi9kbnMtcXVlcnk</code></li>
+  <li>DoT: <code>sdns://AwEAAAAAAAAAAAAJZG5zbG93Lm1l</code></li>
+  <li>DoQ: <code>sdns://BAEAAAAAAAAAAAAJZG5zbG93Lm1l</code></li>
 </ul>
-</p>
 
-<p>
-Apple Configuration for iOS v14+ and macOS v11+ (Big Sur and later)
+<h3>Encrypted DNS Configuration Guides</h3>
+<p>Please be aware that the configuration steps may vary slightly depending on your device and software version. If you encounter any issues, we recommend referring to the official documentation for your specific device or software.</p>
+
+<h4>Android (v9+)</h4>
+<ol>
+  <li>Go to <code>Settings</code> → <code>Network & internet</code> → <code>Advanced</code> → <code>Private DNS</code>.</li>
+  <li>Select the <code>Private DNS provider hostname</code> option.</li>
+  <li>Enter <code>dnslow.me</code> and tap on <code>Save</code>.</li>
+</ol>
+
+<h4>Desktop Browsers</h4>
+<p>Open <code>Settings</code> from the menu, then follow the instructions below for different browsers.</p>
+
+<h5>Mozilla Firefox</h5>
+<ol>
+  <li>In the <code>General</code> tab, scroll down to the <code>Network Settings</code> section and click on <code>Settings</code>.</li>
+  <li>Scroll down and enable <code>Enable DNS over HTTPS</code>.</li>
+  <li>Choose <code>Custom</code> as the provider and enter <code>https://dnslow.me/dns-query</code> in the field.</li>
+  <li>Click on <code>OK</code> to save the changes.</li>
+</ol>
+<h5>Brave</h5>
+<ol>
+  <li>Click the <code>Privacy and security</code> tab, then click on <code>Security</code>.</li>
+  <li>In the <code>Advanced</code> section, enable <code>Use secure DNS</code>.</li>
+  <li>Under <code>With</code>, select <code>Custom</code>, then enter <code>https://dnslow.me/dns-query</code> in the field.</li>
+</ol>
+<h5>Google Chrome</h5>
+<ol>
+  <li>Scroll down and click on <code>Privacy and security</code>, then click on <code>Security</code>.</li>
+  <li>In the <code>Advanced</code> section, enable <code>Use secure DNS</code>.</li>
+  <li>Under <code>With</code>, select <code>Custom</code>, then enter <code>https://dnslow.me/dns-query</code> in the field.</li>
+</ol>
+<h5>Microsoft Edge</h5>
+<ol>
+  <li>Scroll down to <code>Privacy, Search, and Services</code>, then click on <code>Security</code>.</li>
+  <li>Enable <code>Use secure DNS</code> under the <code>Security</code> section.</li>
+  <li>Under <code>Choose a service provider</code>, select <code>Enter custom provider</code>and enter <code>https://dnslow.me/dns-query</code> in the field.</li>
+</ol>
+<h4>Apple Devices</h4>
+<p>Download the Configuration Profile. If you are using an iOS device, make sure to download it via <strong>Safari</strong>. Then, follow the instructions below for different devices:</p>
 <ul>
-<li><a href="./doh.dnslow.mobileconfig" target="_blank">DoH profile</a></li>
-<li><a href="./dot.dnslow.mobileconfig" target="_blank">DoT profile</a></li>
+  <li><a href="https://dnslow.me/doh.dnslow.mobileconfig">DoH profile</a></li>
+  <li><a href="https://dnslow.me/dot.dnslow.mobileconfig">DoT profile</a></li>
 </ul>
-</p>
+<h5>iOS (v14+)</h5>
+<ol>
+  <li>Tap <code>Allow</code> if asked to allow download.</li>
+  <li>Open <code>Settings</code> app and tap to <code>Profile Downloaded</code>.</li>
+  <li>Tap <code>Install</code> in the upper right corner, fill in your password and follow the instructions to complete the installation.</li>
+</ol>
+<h5>macOS (v11+)</h5>
+<ol>
+  <li>Open the downloaded profile.</li>
+  <li>Open <code>System Preferences</code>.</li>
+  <li>Go to <code>Profiles</code>(Use the Search function to locate it faster!).</li>
+  <li>Double click the downloaded profile and follow the instructions to complete the installation.</li>
+</ol>
 
-<p>
-Privacy policy: Logging is only enabled to debug, and improve the service itself, minimize the false-positive blocking. All logs will only be existing for a very short time. No logs will be shared, sold, or exchanged with any 3rd-party.
-</p>
+<h3>Contact and Support</h3>
+<p>If you have any questions, concerns, or issues related to our DNS service, please feel free to open an issue on our <a href="https://github.com/PeterDaveHello/dnslow.me/issues">GitHub repository issue tracker</a>. We appreciate your feedback and will do our best to assist you.</p>
 
-<p><em>Thank you for using dnslow.me.</em></p>
+<h3>Privacy Policy</h3>
+<p>Logging is enabled only for debugging purposes, service improvement, and minimizing false-positive blocking. All logs are retained for a very short period and will not be shared, sold, or exchanged with any third party.</p>
+<p>Thank you for using dnslow.me.</p>
 </body>
 </html>
