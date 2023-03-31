@@ -109,7 +109,9 @@ queryLog:
 redis:
   address: 172.17.0.1:6379
 
-port: 53
+ports:
+ dns: 53
+
 bootstrapDns:
   - upstream: https://dns.quad9.net/dns-query
     ips:
