@@ -115,6 +115,10 @@ bootstrapDns:
     ips:
       - 9.9.9.9
       - 149.112.112.112
+  - upstream: https://dns.google/dns-query
+    ips:
+      - 8.8.8.8
+      - 8.8.4.4
 
 connectIPVersion: v4
 logLevel: warn
