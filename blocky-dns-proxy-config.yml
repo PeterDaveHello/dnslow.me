@@ -123,6 +123,7 @@ bootstrapDns:
       - 8.8.4.4
 
 connectIPVersion: v4
-logLevel: warn
-logFormat: text
-logPrivacy: true
+log:
+  level: warn
+  format: text
+  privacy: true
