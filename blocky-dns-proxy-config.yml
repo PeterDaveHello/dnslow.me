@@ -33,6 +33,8 @@ upstream:
     - https://freedns.controld.com/uncensored
     - tcp-tls:private.canadianshield.cira.ca
     - https://private.canadianshield.cira.ca/dns-query
+    - tcp-tls:safeservedns.com
+    - https://safeservedns.com/dns-query
     - tcp-tls:max.rethinkdns.com
     - https://max.rethinkdns.com
     - tcp-tls:uncensored.dns.dnswarden.com
