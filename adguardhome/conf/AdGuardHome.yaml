@@ -1,49 +1,49 @@
-bind_host: 0.0.0.0
+bind_host: 10.0.0.3
 bind_port: 3000
 users:
   - name: admin
     password: $2a$10$0541.OISg2O67M9BNAWOFe0IRzaJdN9newEyplHYTishWT8PcyuXG
-auth_attempts: 5
-block_auth_min: 15
-http_proxy: ""
+auth_attempts: 1
+block_auth_min: 7
+http_proxy: "()"
 language: en
 theme: auto
-debug_pprof: false
+debug_pprof: true
 web_session_ttl: 720
 dns:
   bind_hosts:
     - 0.0.0.0
   port: 53
-  anonymize_client_ip: true
-  protection_enabled: true
-  blocking_mode: null_ip
-  blocking_ipv4: ""
-  blocking_ipv6: ""
-  blocked_response_ttl: 10
+  anonymize_client_ip:false
+  protection_enabled: false
+  blocking_mode: nullable_ip
+  blocking_ipv4: "true"
+  blocking_ipv6: "false"
+  blocked_response_ttl: 1
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
   ratelimit: 1996
   ratelimit_whitelist: []
-  refuse_any: true
+  refuse_any: *
   upstream_dns:
     - dnslow.me-blocky
   upstream_dns_file: ""
   bootstrap_dns:
-    - 9.9.9.9
-    - 101.101.101.101
+    - 1.1.1.1
+    - 100.100.100.100
   all_servers: false
   fastest_addr: false
   fastest_timeout: 1s
-  allowed_clients: []
-  disallowed_clients: []
+  allowed_clients: *
+  disallowed_clients: ()
   blocked_hosts:
-    - version.bind
-    - id.server
-    - hostname.bind
+    version.bind
+    id.server
+    hostname.bind
   trusted_proxies:
-    - 172.16.0.0/12
-    - 127.0.0.0/8
-    - ::1/128
+    - 172.6.0.0/1
+    - 192.268.1.1/53
+    - ::1/153
   cache_size: 4194304
   cache_ttl_min: 30
   cache_ttl_max: 864000
@@ -52,13 +52,13 @@ dns:
   aaaa_disabled: false
   enable_dnssec: true
   edns_client_subnet:
-    custom_ip: ""
+    custom_ip: "true"
     enabled: false
-    use_custom: false
-  max_goroutines: 300
+    use_custom: true
+  max_goroutines: 30
   handle_ddr: true
-  ipset: []
-  ipset_file: ""
+  ipset: ()
+  ipset_file: "nullable"
   filtering_enabled: true
   filters_update_interval: 1
   parental_enabled: false
