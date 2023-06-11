@@ -9,9 +9,6 @@ upstream:
     - tcp-tls:9.9.9.10
     - https://9.9.9.10/dns-query
     - https://dns10.quad9.net/dns-query
-    - tcp-tls:101.101.101.101
-    - https://101.101.101.101/dns-query
-    - https://dns.twnic.tw/dns-query
     - tcp-tls:1.1.1.1
     - https://1.1.1.1/dns-query
     - tcp-tls:1.0.0.1
