@@ -40,8 +40,6 @@ upstream:
     - https://dns-unfiltered.adguard.com/dns-query
     - tcp-tls:doh.mullvad.net
     - https://doh.mullvad.net/dns-query
-    - tcp-tls:dns.surfshark.com
-    - https://dns.surfshark.com/dns-query
     - tcp-tls:dns.switch.ch
     - https://dns.switch.ch/dns-query
     - tcp-tls:dns.dnshome.de
