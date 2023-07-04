@@ -30,6 +30,7 @@ dns:
     - dnslow.me-blocky
   upstream_dns_file: ""
   bootstrap_dns:
+    - 127.0.0.11
     - 9.9.9.9
     - 101.101.101.101
   all_servers: false
