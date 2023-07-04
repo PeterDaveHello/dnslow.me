@@ -1,5 +1,6 @@
-bind_host: 0.0.0.0
-bind_port: 3000
+http:
+  address: 0.0.0.0:3000
+  session_ttl: 720h
 users:
   - name: admin
     password: $2a$10$0541.OISg2O67M9BNAWOFe0IRzaJdN9newEyplHYTishWT8PcyuXG
@@ -9,7 +10,6 @@ http_proxy: ""
 language: en
 theme: auto
 debug_pprof: false
-web_session_ttl: 720
 dns:
   bind_hosts:
     - 0.0.0.0
@@ -79,7 +79,10 @@ dns:
     yandex: true
     youtube: true
   rewrites: []
-  blocked_services: []
+  blocked_services:
+    schedule:
+      time_zone: UTC
+    ids: []
   upstream_timeout: 10s
   private_networks: []
   use_private_ptr_resolvers: true
@@ -456,4 +459,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 20
+schema_version: 23
