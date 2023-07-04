@@ -63,6 +63,7 @@ upstream:
     - https://doh-2.seby.io/dns-query
     - tcp-tls:getdnsapi.net
     - https://dns.hinet.net/dns-query
+    - tcp-tls:ordns.he.net
     - https://ordns.he.net/dns-query
     - tcp-tls:dns.hostux.net
     - https://dns.hostux.net/dns-query
