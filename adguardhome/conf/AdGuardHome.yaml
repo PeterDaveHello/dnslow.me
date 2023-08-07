@@ -302,10 +302,6 @@ filters:
     name: Prigent-Malware
     id: 1657979086
   - enabled: true
-    url: https://v.firebog.net/hosts/Prigent-Phishing.txt
-    name: Prigent-Phishing
-    id: 1657979087
-  - enabled: true
     url: https://www.joewein.net/dl/bl/dom-bl-base.txt
     name: joewein.net dom-bl-base
     id: 1657979088
