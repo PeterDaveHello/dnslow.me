@@ -8,7 +8,7 @@ auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
 language: en
-theme: auto
+theme: dark
 debug_pprof: false
 dns:
   bind_hosts:
