@@ -24,7 +24,7 @@ services:
     depends_on:
       - blocky
   blocky:
-    image: spx01/blocky:v0.21
+    image: spx01/blocky:v0.22
     container_name: dnslow.me-blocky
     restart: unless-stopped
     healthcheck:
