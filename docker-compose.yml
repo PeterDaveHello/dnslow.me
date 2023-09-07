@@ -28,7 +28,7 @@ services:
     container_name: dnslow.me-blocky
     restart: unless-stopped
     healthcheck:
-      test: nslookup www.google.com || exit 1
+      test: ["CMD", "/app/blocky", "healthcheck"]
       timeout: 5s
       interval: 60s
       start_period: 10s
