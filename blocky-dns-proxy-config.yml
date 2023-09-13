@@ -37,6 +37,8 @@ upstreams:
       - https://max.rethinkdns.com
       - tcp-tls:uncensored.dns.dnswarden.com
       - https://dns.dnswarden.com/uncensored
+      - tcp-tls:wikimedia-dns.org
+      - https://wikimedia-dns.org/dns-query
       - tcp-tls:dns-unfiltered.adguard.com
       - https://dns-unfiltered.adguard.com/dns-query
       - tcp-tls:doh.mullvad.net
