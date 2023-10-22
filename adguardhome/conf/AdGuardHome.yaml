@@ -146,10 +146,6 @@ filters:
     name: CoinBlockerLists
     id: 1657974828
   - enabled: true
-    url: https://kriskintel.com/feeds/ktip_covid_domains.txt
-    name: COVID-19 phishing sites
-    id: 1657974829
-  - enabled: true
     url: https://raw.githubusercontent.com/MetaMask/eth-phishing-detect/master/src/hosts.txt
     name: eth-phishing-detect
     id: 1657974830
@@ -165,10 +161,6 @@ filters:
     url: https://hole.cert.pl/domains/domains.txt
     name: Malicious Domain list
     id: 1657974834
-  - enabled: true
-    url: https://kriskintel.com/feeds/ktip_malicious_domains.txt
-    name: Malicious Domain list
-    id: 1657974835
   - enabled: true
     url: https://rescure.me/rescure_domain_blacklist.txt
     name: Malicious Domain Blacklist
@@ -209,10 +201,6 @@ filters:
     url: https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt
     name: Ransomware block list
     id: 1657979066
-  - enabled: true
-    url: https://kriskintel.com/feeds/ktip_ransomware_feeds.txt
-    name: Ransomware Feeds
-    id: 1657979067
   - enabled: true
     url: https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt
     name: Scam block list
@@ -277,10 +265,6 @@ filters:
     url: https://v.firebog.net/hosts/Prigent-Malware.txt
     name: Prigent-Malware
     id: 1657979086
-  - enabled: true
-    url: https://www.joewein.net/dl/bl/dom-bl-base.txt
-    name: joewein.net dom-bl-base
-    id: 1657979088
   - enabled: true
     url: https://block.energized.pro/extensions/regional/formats/domains.txt
     name: energized regional
