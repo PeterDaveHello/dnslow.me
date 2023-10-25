@@ -266,10 +266,6 @@ filters:
     name: Prigent-Malware
     id: 1657979086
   - enabled: true
-    url: https://block.energized.pro/extensions/regional/formats/domains.txt
-    name: energized regional
-    id: 1657979089
-  - enabled: true
     url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
     name: StevenBlack
     id: 1657979090
