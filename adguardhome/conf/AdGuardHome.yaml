@@ -32,8 +32,7 @@ dns:
   fallback_dns:
     - https://9.9.9.10/dns-query
     - https://dns.hinet.net/dns-query
-  all_servers: false
-  fastest_addr: false
+  upstream_mode: load_balance
   fastest_timeout: 1s
   allowed_clients: []
   disallowed_clients: []
@@ -445,4 +444,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 27
+schema_version: 28
