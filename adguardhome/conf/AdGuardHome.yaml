@@ -62,13 +62,14 @@ dns:
   bootstrap_prefer_ipv6: false
   upstream_timeout: 10s
   private_networks: []
-  use_private_ptr_resolvers: true
+  use_private_ptr_resolvers: false
   local_ptr_upstreams: []
   use_dns64: false
   dns64_prefixes: []
   serve_http3: false
   use_http3_upstreams: false
   serve_plain_dns: true
+  hostsfile_enabled: true
 tls:
   enabled: true
   server_name: dnslow.me
@@ -85,12 +86,14 @@ tls:
   private_key_path: /opt/adguardhome/conf/server.key
   strict_sni_check: false
 querylog:
+  dir_path: ""
   ignored: []
   interval: 6h
   size_memory: 1000
   enabled: true
   file_enabled: true
 statistics:
+  dir_path: ""
   ignored: []
   interval: 2160h
   enabled: true
