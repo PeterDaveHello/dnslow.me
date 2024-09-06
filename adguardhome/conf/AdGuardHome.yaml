@@ -31,7 +31,7 @@ dns:
     - 101.101.101.101
   fallback_dns:
     - https://9.9.9.10/dns-query
-    - https://dns.hinet.net/dns-query
+    - https://8.8.8.8/dns-query
   upstream_mode: load_balance
   fastest_timeout: 1s
   allowed_clients: []
