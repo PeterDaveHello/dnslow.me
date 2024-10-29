@@ -28,6 +28,9 @@ dns:
   bootstrap_dns:
     - 127.0.0.11
     - 101.101.101.101
+    - 8.26.56.26
+    - 208.67.222.222
+    - 195.46.39.39
   fallback_dns:
     - https://9.9.9.10/dns-query
     - https://8.8.8.8/dns-query
