@@ -62,7 +62,7 @@ upstreams:
       - tcp-tls:dot.libredns.gr
       - https://doh.libredns.gr/dns-query
       - tcp-tls:dot.seby.io
-      - https://doh.seby.io:8443/dns-query
+      - https://doh.seby.io/dns-query
       - https://doh-2.seby.io/dns-query
       - tcp-tls:getdnsapi.net
       - tcp-tls:ordns.he.net
