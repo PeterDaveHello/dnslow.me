@@ -86,7 +86,6 @@ upstreams:
       - https://pluton.plan9-dns.com/dns-query
       - https://helios.plan9-dns.com/dns-query
       - https://kronos.plan9-dns.com/dns-query
-      - https://chewbacca.meganerd.nl/dns-query
       - https://secure.avastdns.com/dns-query
       - https://dnsnl.alekberg.net/dns-query
       - https://dnsse.alekberg.net/dns-query
