@@ -45,6 +45,7 @@ dns:
     - 172.16.0.0/12
     - 127.0.0.0/8
     - ::1/128
+  cache_enabled: true
   cache_size: 4194304
   cache_ttl_min: 30
   cache_ttl_max: 864000
@@ -449,4 +450,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 29
+schema_version: 30
