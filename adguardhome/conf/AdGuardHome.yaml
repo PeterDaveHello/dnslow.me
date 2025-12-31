@@ -50,6 +50,8 @@ dns:
   cache_ttl_min: 30
   cache_ttl_max: 864000
   cache_optimistic: true
+  cache_optimistic_answer_ttl: 30s
+  cache_optimistic_max_age: 12h
   bogus_nxdomain: []
   aaaa_disabled: false
   enable_dnssec: true
@@ -451,4 +453,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 31
+schema_version: 32
