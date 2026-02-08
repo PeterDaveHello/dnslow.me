@@ -48,7 +48,7 @@
 </dict>
 </array>
 <key>PayloadDescription</key>
-<string>Adds different encrypted DNS configurations to Big Sur and iOS 14 based systems</string>
+<string>Adds encrypted DNS configurations for iOS, iPadOS, and macOS systems</string>
 <key>PayloadDisplayName</key>
 <string>Encrypted DNS (DoH)</string>
 <key>PayloadIdentifier</key>
