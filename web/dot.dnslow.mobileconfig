@@ -48,9 +48,9 @@
 </dict>
 </array>
 <key>PayloadDescription</key>
-<string>Adds different encrypted DNS configurations to Big Sur and iOS 14 based systems</string>
+<string>Adds encrypted DNS configurations for iOS, iPadOS, and macOS systems</string>
 <key>PayloadDisplayName</key>
-<string>Encrypted DNS (DoH, DoT)</string>
+<string>Encrypted DNS (DoT)</string>
 <key>PayloadIdentifier</key>
 <string>com.dnslow.apple-dns.4009a9fd-946a-421a-9264-5fb56d9dada3</string>
 <key>PayloadRemovalDisallowed</key>
