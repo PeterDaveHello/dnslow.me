@@ -82,8 +82,6 @@ upstreams:
       - https://ns3.opennameserver.org/dns-query
       - tcp-tls:ns4.opennameserver.org
       - https://ns4.opennameserver.org/dns-query
-      - https://opennic1.eth-services.de:853/
-      - https://opennic2.eth-services.de:853/
       - https://pluton.plan9-dns.com/dns-query
       - https://helios.plan9-dns.com/dns-query
       - https://kronos.plan9-dns.com/dns-query
