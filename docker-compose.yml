@@ -1,6 +1,5 @@
 ---
 
-version: "2.1"
 services:
   adguardhome:
     image: adguard/adguardhome:v0.107.72
