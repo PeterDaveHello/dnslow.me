@@ -1,4 +1,5 @@
 upstreams:
+  strategy: random
   groups:
     default:
       - tcp-tls:8.8.4.4
