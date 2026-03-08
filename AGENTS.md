@@ -18,7 +18,7 @@ DNS query path is `Client -> AdGuard Home -> Blocky -> public encrypted resolver
 - `blocky` distributes traffic across many DoH/DoT upstreams and provides caching.
 - `adguardhome` also has `fallback_dns`; during upstream failure it can query public DoH resolvers directly.
 - `adguardhome` is the public entrypoint for DNS traffic; `blocky` stays internal to the compose network.
-- Blocky config currently includes external Redis at `172.17.0.1:6379` for cache/state sync; this host is environment-specific.
+- Blocky config currently points to the in-stack Redis service at `redis:6379` for cache/state sync.
 - Redis is optional unless `redis.required: true` is set (Blocky default is `false`).
 - Local runtime data lives under `adguardhome/work/` (created on first run; git-ignored).
 - TLS key material (host path: `adguardhome/conf/server.crt`, `adguardhome/conf/server.key`; container path: `/opt/adguardhome/conf/`) must stay local and never be committed.
