@@ -42,6 +42,8 @@ upstreams:
       - https://wikimedia-dns.org/dns-query
       - tcp-tls:dns-unfiltered.adguard.com
       - https://dns-unfiltered.adguard.com/dns-query
+      - tcp-tls:unfiltered.joindns4.eu
+      - https://unfiltered.joindns4.eu/dns-query
       - tcp-tls:doh.mullvad.net
       - https://doh.mullvad.net/dns-query
       - tcp-tls:dns.switch.ch
