@@ -6,7 +6,7 @@ services:
     container_name: dnslow.me-adguardhome
     restart: unless-stopped
     healthcheck:
-      test: nslookup www.google.com || exit 1
+      test: nslookup www.google.com 127.0.0.1 || exit 1
       timeout: 5s
       interval: 60s
       start_period: 10s
