@@ -2,6 +2,13 @@ http:
   pprof:
     port: 6060
     enabled: false
+  doh:
+    routes:
+      - GET /dns-query
+      - POST /dns-query
+      - GET /dns-query/{ClientID}
+      - POST /dns-query/{ClientID}
+    insecure_enabled: true
   address: 0.0.0.0:3000
   session_ttl: 720h
 users:
@@ -85,7 +92,6 @@ tls:
   port_dns_over_quic: 853
   port_dnscrypt: 0
   dnscrypt_config_file: ""
-  allow_unencrypted_doh: true
   certificate_chain: ""
   private_key: ""
   certificate_path: /opt/adguardhome/conf/server.crt
@@ -455,4 +461,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 33
+schema_version: 34
