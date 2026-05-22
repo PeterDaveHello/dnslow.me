@@ -2,7 +2,7 @@
 
 services:
   adguardhome:
-    image: adguard/adguardhome:v0.107.75
+    image: adguard/adguardhome:v0.107.76
     container_name: dnslow.me-adguardhome
     restart: unless-stopped
     healthcheck:
