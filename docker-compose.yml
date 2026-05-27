@@ -38,7 +38,7 @@ services:
     volumes:
       - ./blocky-dns-proxy-config.yml:/app/config.yml
   redis:
-    image: redis:8.6-alpine
+    image: redis:8.8-alpine
     container_name: dnslow.me-redis
     restart: unless-stopped
     command: ["redis-server", "--appendonly", "yes", "--maxmemory", "128mb", "--maxmemory-policy", "volatile-lfu"]
