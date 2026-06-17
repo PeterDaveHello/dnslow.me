@@ -10,7 +10,7 @@ http:
       - POST /dns-query/{ClientID}
     insecure_enabled: true
   address: 0.0.0.0:3000
-  session_ttl: 720h
+  session_ttl: 30d
 users:
   - name: admin
     password: $2a$10$0541.OISg2O67M9BNAWOFe0IRzaJdN9newEyplHYTishWT8PcyuXG
@@ -108,7 +108,7 @@ querylog:
 statistics:
   dir_path: ""
   ignored: []
-  interval: 2160h
+  interval: 90d
   enabled: true
   ignored_enabled: false
 filters:
