@@ -88,7 +88,7 @@ upstreams:
       - https://ns1.flodns.net/dns-query
       - https://ns2.flodns.net/dns-query
       - tcp-tls:dns.neutopia.org
-      - https://dns.bebasid.com/unfiltered
+      - https://unfiltered.dns.bebasid.com/dns-query
       - tcp-tls:unfiltered.dns.bebasid.com
 
 caching:
