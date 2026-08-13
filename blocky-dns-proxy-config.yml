@@ -68,8 +68,6 @@ upstreams:
       - https://ordns.he.net/dns-query
       - tcp-tls:dns.hostux.net
       - https://dns.hostux.net/dns-query
-      - tcp-tls:puredns.org
-      - https://puredns.org/dns-query
       - tcp-tls:www.morbitzer.de
       - https://www.morbitzer.de/dns-query
       - tcp-tls:ns1.opennameserver.org
@@ -83,8 +81,6 @@ upstreams:
       - https://pluton.plan9-dns.com/dns-query
       - https://helios.plan9-dns.com/dns-query
       - https://kronos.plan9-dns.com/dns-query
-      - https://secure.avastdns.com/dns-query
-      - https://dnsse.alekberg.net/dns-query
       - https://ns1.flodns.net/dns-query
       - https://ns2.flodns.net/dns-query
       - tcp-tls:dns.neutopia.org
