@@ -1,0 +1,136 @@
+name: Claude Code Review
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review, review_requested]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number to review
+        required: true
+
+concurrency:
+  # Include event_name to prevent workflow_dispatch and pull_request_target from canceling each other
+  # This ensures manual runs aren't accidentally canceled by PR-triggered runs
+  group: claude-pr-review-${{ github.event_name }}-${{ github.event.pull_request.number || inputs.pr_number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  claude_review:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request_target' &&
+        (github.event.pull_request.head.repo.fork == false ||
+          (github.event.pull_request.head.repo.fork == true &&
+            github.event.action == 'review_requested' &&
+            github.actor == github.repository_owner)))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          fetch-depth: 1
+          # For pull_request_target (fork PRs), checkout base branch to prevent prompt injection
+          # via malicious AGENTS.md. Claude uses gh pr diff to review the actual PR changes.
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.ref }}
+          persist-credentials: false
+
+      - name: Detect workflow changes
+        if: github.event_name == 'pull_request_target'
+        id: workflow_changes
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            let pullNumber = context.payload.pull_request?.number;
+
+            if (!pullNumber && context.payload.issue?.pull_request) {
+              pullNumber = context.payload.issue.number;
+            }
+
+            // Detection logic designed for compatibility with additional triggers
+            // that provide issue payloads.
+
+            if (!pullNumber) {
+              // Fail closed: if we cannot determine a PR number, skip Claude on pull_request_target
+              // to avoid bypassing workflow change security checks.
+              core.warning('Claude review skipped: unable to determine pull request number from event payload.');
+              core.setOutput('workflows_changed', 'true');
+              return;
+            }
+
+            const files = await github.paginate(
+              github.rest.pulls.listFiles,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pullNumber,
+              }
+            );
+
+            // GitHub API has a 3000 file limit. If we hit it, fail-closed to prevent bypassing
+            // security checks by hiding sensitive changes in huge PRs beyond the limit.
+            if (files.length >= 3000) {
+              core.warning('PR has 3000+ files (API limit reached). Skipping Claude review as a security precaution.');
+              core.setOutput('workflows_changed', 'true');
+              return;
+            }
+
+            const SENSITIVE_DIR_PREFIXES = ['.github/workflows/', '.github/actions/'];
+            // Matches AGENTS.md and CLAUDE.md at root or in any subdirectory for fail-safe security.
+            // This prevents prompt injection via instruction files anywhere in the PR.
+            const SENSITIVE_FILES = ['AGENTS.md', 'CLAUDE.md'];
+            const changed = files.some((file) => {
+              // Check both filename and previous_filename (for renames) to prevent bypassing
+              // security checks by renaming sensitive files out of protected paths.
+              const paths = [file.filename, file.previous_filename].filter(Boolean);
+              return paths.some(path =>
+                SENSITIVE_DIR_PREFIXES.some((prefix) => path.startsWith(prefix)) ||
+                SENSITIVE_FILES.some((name) => path === name || path.endsWith('/' + name))
+              );
+            });
+
+            core.setOutput('workflows_changed', changed ? 'true' : 'false');
+
+      - name: Run Claude Code Review
+        # GitHub Actions step outputs are strings; keep the condition below comparing against 'true'.
+        # Note: For non-fork PRs from trusted contributors, we run the review even when sensitive files
+        # are modified. Only fork PRs check workflows_changed.
+        if: |
+          github.event_name != 'pull_request_target' ||
+          github.event.pull_request.head.repo.fork == false ||
+          steps.workflow_changes.outputs.workflows_changed != 'true'
+        id: claude-review
+        uses: anthropics/claude-code-action@1b8ee3b94104046d71fde52ec3557651ad8c0d71 # v1.0.29
+        env:
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+
+            Please review this pull request and provide feedback on:
+            - Code quality and best practices
+            - Potential bugs or issues
+            - Performance considerations
+            - Security concerns
+            - Test coverage
+
+            Use the repository's AGENTS.md for guidance on style and conventions. Be constructive and helpful in your feedback.
+            Use `gh pr diff ${{ github.event.pull_request.number || inputs.pr_number }}` to see the PR changes, then use a non-interactive command to leave your review:
+            `gh pr comment ${{ github.event.pull_request.number || inputs.pr_number }} --body-file - <<'EOF'
+            <your review here>
+            EOF`
+
+          claude_args: >
+            --model claude-opus-4-6
+            --allowed-tools
+            "Bash(gh pr comment *),Bash(gh pr diff *),Bash(gh pr view *)"
